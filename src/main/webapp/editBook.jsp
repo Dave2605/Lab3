@@ -4,21 +4,28 @@
     <title>Edit</title>
 </head>
 <body>
+
+<%String id = request.getParameter("id");%>
+<%String name = request.getParameter("name");%>
+<%String author = request.getParameter("author");%>
+<%String genre = request.getParameter("genre");%>
+
 <form action="editBook" method="get">
     <table>
-        <tr><td>ID:</td><td><input type="text" name="id"/></td></tr>
-        <tr><td>Name:</td><td><input type="text" name="name"/></td></tr>
-        <tr><td>Author:</td><td><input type="text" name="author"/></td></tr>
+        <tr><td>ID:</td><td><input type="text" name="id" readonly value="<%=id%>"/></td></tr>
+        <tr><td>Name:</td><td><input type="text" name="name" value="<%=name%>"/></td></tr>
+        <tr><td>Author:</td><td><input type="text" name="author" value="<%=author%>"/></td></tr>
         <tr><td>
             <select name="genre" style="width:150px">
-                <option>adventure</option>
-                <option>novel</option>
-                <option>fiction</option>
+                <option value="<%=genre%>"><%=genre%></option>
+                <option value="adventure">adventure</option>
+                <option value="novel">novel</option>
+                <option value="fiction">fiction</option>
             </select>
         </td></tr>
         <tr><td colspan="2"><input type="submit" value="Edit"/></td></tr>
     </table>
 </form>
-<a href="index.html">Back to the main page</a>
+<tr><td><form action="index.html"><input type ="submit" value="Back to the main page"></form></tr></td>
 </body>
 </html>

@@ -17,16 +17,24 @@
 
     if(books!=null) {
             for(Book book :books) {
+
+                String id = String.valueOf(book.getId());
+                String name = String.valueOf(book.getName());
+                String author = String.valueOf(book.getAuthor());
+                String genre = String.valueOf(book.getGenre());
+
             out.print("<tr><th>" + book.getId() + "</th><th>" + book.getName() + "</th><th>" + book.getAuthor()
-                    + "</th><th>" + book.getGenre() + "</td></tr>");
+                    + "</th><th>" + book.getGenre() + "</th><th>" + "<form action=\"editBook.jsp?id=" + id
+                            + "&name=" + name  + "&author=" + author + "&genre=" + genre + "\""
+                    + " method=\"post\"><input type=\"submit\" value=\"Edit\"></form>" + "</td></tr>");
         }
     }
-    out.print("<tr><td><a href=\"editBook.jsp\">Edit book</a></tr></td>");
-    out.print("<tr><td><a href=\"deleteBook.jsp\">Delete book</a></tr></td>");
+    out.print("<tr><td><form action=\"deleteBook.jsp\"><input type =\"submit\" value=\"Delete book\"></form></tr></td>");
+    out.print("<tr><th></th></tr>");
+    out.print("<tr><td><form action=\"index.html\"><input type =\"submit\" value=\"Back to the main page\"></form></tr></td>");
 %>
 
 <div>
 </div>
-<a href="index.html">Back to the main page</a>
 </body>
 </html>

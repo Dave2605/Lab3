@@ -18,6 +18,6 @@
         <tr><td colspan="2"><input type="submit" value="Add book"/></td></tr>
     </table>
 </form>
-<a href="index.html">Back to the main page</a>
+<tr><td><form action="index.html"><input type ="submit" value="Back to the main page"></form></tr></td>
 </body>
 </html>
